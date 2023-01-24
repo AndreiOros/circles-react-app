@@ -1,0 +1,38 @@
+{
+    "license": "ISC",
+    "version": "1.0.0",
+    "name": "boilerplate-react-app",
+    "homepage": "https://github.com/space-hound/boilerplate-react-app#readme",
+    "description": "A boilerplate for react app projects.",
+    "author": {
+        "name": "Borz Alexandru Mihai",
+        "email": "alexandru.borz94@gmail.com",
+        "url": "https://github.com/space-hound"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/space-hound/boilerplate-react-app.git"
+    },
+    "bugs": {
+        "url": "https://github.com/space-hound/boilerplate-react-app/issues"
+    },
+    "keywords": [
+        "react",
+        "webpack",
+        "boilerplate",
+        "javascript",
+        "scss",
+        "css",
+        "babel",
+        "starter",
+        "modules"
+    ],
+    "engines": {
+        "node": ">=18.0.0",
+        "npm": ">=8.6.0"
+    },
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}
