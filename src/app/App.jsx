@@ -1,19 +1,8 @@
 import React from 'react';
-
-import { Img } from 'components/test-img';
-import { Title } from 'components/test-title';
-
-import cookie from 'assets/images/download.png';
-
-import styles from './App.module.scss';
+import Circles from 'views/Circles';
 
 const App = () => {
-	return (
-		<div className={styles.App}>
-			<Title>Hello World!</Title>
-			<Img src={cookie} />
-		</div>
-	);
+	return <Circles />;
 };
 
 export { App };

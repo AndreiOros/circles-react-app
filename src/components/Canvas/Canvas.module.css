@@ -1,0 +1,12 @@
+.canvas {
+	width: var(--canvas-width, 100%);
+	height: var(--canvas-height, 100%);
+	background-color: var(--canvas-bg-color, grey);
+	position: relative;
+	margin: 15px auto;
+}
+.message {
+	margin: 15px auto;
+	width: 50%;
+	text-align: center;
+}
