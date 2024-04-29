@@ -1,2 +1,3 @@
-# boilerplate-react-app
-A boilerplate project for creating react application. Build with webpack and support for css/scss modules.
+# Circles generator
+
+A react application build with webpack and support for css/scss modules, that generates circles on a canvas using the data given by the user.
