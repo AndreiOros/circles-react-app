@@ -2,5 +2,5 @@
 	border-radius: 50%;
 	border: solid 1px;
 	border-color: black;
-	position: absolute;
+	position: absolute !important;
 }

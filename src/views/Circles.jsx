@@ -75,10 +75,10 @@ export default function Circles() {
 	}
 	function determineIfCirclesAreOutOfBound(coordonates) {
 		const outOfBoundXaxis =
-			coordonates.x + Number(canvasData.radius) * 2 + 1 >
+			coordonates.x + Number(canvasData.radius) * 2 + 2 >
 			Number(canvasData.width);
 		const outOfBoundYaxis =
-			coordonates.y + Number(canvasData.radius) * 2 + 1 >
+			coordonates.y + Number(canvasData.radius) * 2 + 2 >
 			Number(canvasData.height);
 		if (outOfBoundXaxis || outOfBoundYaxis) {
 			return true;
