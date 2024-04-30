@@ -3,11 +3,11 @@ import UserForm from 'components/UserForm/UserForm';
 import Canvas from 'components/Canvas/Canvas';
 export default function Circles() {
 	const [canvasData, setCanvasData] = useState({
-		width: '',
-		height: '',
+		width: '1200',
+		height: '700',
 		radius: 7,
-		count: 30,
-		color: 'red',
+		count: 300,
+		color: '#FFD700',
 	});
 	const [circlesArray, setCirclesArray] = useState([]);
 	const failedPositions = [];
@@ -79,7 +79,7 @@ export default function Circles() {
 			Number(canvasData.width);
 		const outOfBoundYaxis =
 			coordonates.y + Number(canvasData.radius) * 2 + 1 >
-			Number(canvasData.width);
+			Number(canvasData.height);
 		if (outOfBoundXaxis || outOfBoundYaxis) {
 			return true;
 		}
