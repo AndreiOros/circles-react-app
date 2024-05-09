@@ -1,4 +1,5 @@
 import React from 'react';
+
 import style from './Circle.modules.css';
 
 export default function Circle({ circleData }) {

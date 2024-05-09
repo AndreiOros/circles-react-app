@@ -1,33 +1,31 @@
 import React, { useState } from 'react';
 import styles from './UserForm.module.css';
+import { generateRandomColor } from 'utils/utils';
 
 export default function UserForm({ canvasData, handleUserFormSubmission }) {
-	const [formData, setFormData] = useState({ ...canvasData });
-	function submitForm(event) {
-		event.preventDefault();
-
-		handleUserFormSubmission(formData);
-	}
+	const [isColorDisabled, setIsColorDisabled] = useState(false);
 	function handleChange(event) {
 		const { name, value } = event.target;
-		setFormData((values) => ({ ...values, [name]: value }));
+		handleUserFormSubmission(name, value);
+	}
+	function handleCheckboxChange(event) {
+		setIsColorDisabled(event.target.checked);
+		if (event.target.checked) {
+			const color = generateRandomColor();
+			handleUserFormSubmission('color', color);
+		}
 	}
 	return (
 		<div className={styles.form_container}>
-			<form
-				className={styles.form}
-				onSubmit={(event) => {
-					submitForm(event);
-				}}
-			>
+			<form className={styles.form}>
 				<label>
 					width:
 					<input
 						type="number"
 						name="width"
 						required
-						value={formData.width}
-						onChange={handleChange}
+						defaultValue={canvasData.width}
+						onBlur={handleChange}
 					/>
 				</label>
 				<label>
@@ -36,8 +34,8 @@ export default function UserForm({ canvasData, handleUserFormSubmission }) {
 						type="number"
 						name="height"
 						required
-						value={formData.height}
-						onChange={handleChange}
+						defaultValue={canvasData.height}
+						onBlur={handleChange}
 					/>
 				</label>
 				<label>
@@ -46,8 +44,8 @@ export default function UserForm({ canvasData, handleUserFormSubmission }) {
 						type="number"
 						name="radius"
 						required
-						value={formData.radius}
-						onChange={handleChange}
+						defaultValue={canvasData.radius}
+						onBlur={handleChange}
 					/>
 				</label>
 				<label>
@@ -56,8 +54,8 @@ export default function UserForm({ canvasData, handleUserFormSubmission }) {
 						type="number"
 						name="count"
 						required
-						value={formData.count}
-						onChange={handleChange}
+						defaultValue={canvasData.count}
+						onBlur={handleChange}
 					/>
 				</label>
 				<label>
@@ -66,15 +64,17 @@ export default function UserForm({ canvasData, handleUserFormSubmission }) {
 						type="text"
 						name="color"
 						required
-						value={formData.color}
-						onChange={handleChange}
+						defaultValue={canvasData.color}
+						onBlur={handleChange}
+						disabled={isColorDisabled}
 					/>
+					<input
+						type="checkbox"
+						name="useColor"
+						onChange={handleCheckboxChange}
+					/>
+					Random color
 				</label>
-				<input
-					className={styles.submit_btn}
-					type="submit"
-					value="Submit"
-				/>
 			</form>
 		</div>
 	);
