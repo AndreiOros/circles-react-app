@@ -1,8 +1,12 @@
 import React from 'react';
-import Circles from 'views/Circles';
+import CirclesView from '../views/CirclesView.jsx';
 
 const App = () => {
-	return <Circles />;
+	return (
+		<div>
+			<CirclesView />
+		</div>
+	);
 };
 
 export { App };
